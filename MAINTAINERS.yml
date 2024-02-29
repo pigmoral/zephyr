@@ -4110,6 +4110,462 @@ Raspberry Pi Pico Platforms:
   labels:
     - "platform: Raspberry Pi Pico"
 
+Silabs Platforms:
+  status: maintained
+  maintainers:
+    - jhedberg
+    - asmellby
+  collaborators:
+    - jerome-pouiller
+    - Martinhoff-maker
+  files:
+    - soc/silabs/
+    - boards/silabs/
+    - dts/arm/silabs/
+    - dts/bindings/*/silabs*
+    - drivers/*/*gecko*
+    - drivers/*/*silabs*
+    - drivers/*/*siwx91x*
+    - drivers/*/*/*silabs*
+    - drivers/*/*/*siwx91x*
+    - tests/boards/silabs/
+    - snippets/*silabs*/
+  labels:
+    - "platform: Silabs"
+
+Silabs SiM3U Platforms:
+  status: maintained
+  maintainers:
+    - rettichschnidi
+  collaborators:
+    - M1cha
+    - asmellby
+    - jerome-pouiller
+    - jhedberg
+  files:
+    - boards/silabs/dev_kits/sim3u1xx_dk/
+    - drivers/*/*_si32*
+    - drivers/*/Kconfig.si32
+    - dts/arm/silabs/sim3u*
+    - dts/bindings/*/*silabs,si32*
+    - include/zephyr/dt-bindings/pinctrl/*si32*
+    - soc/silabs/silabs_sim3/
+  labels:
+    - "platform: Silabs SiM3U"
+  description: >-
+    SiM3U SoCs, dts files, and related drivers. Boards based on SiM3U SoCs.
+
+Gardena Platforms:
+  status: maintained
+  maintainers:
+    - rettichschnidi
+  collaborators:
+    - M1cha
+  files:
+    - boards/gardena/
+  labels:
+    - "platform: Gardena"
+  description: >-
+    Gardena board(s).
+
+SOPHGO Platforms:
+  status: maintained
+  maintainers:
+    - xingrz
+  collaborators:
+    - lenghonglin
+  files:
+    - boards/common/cvi-fiptool.board.cmake
+    - boards/milkv/duo/
+    - boards/milkv/duos/
+    - dts/riscv/sophgo/
+    - dts/bindings/*/sophgo,*
+    - drivers/*/*.sophgo
+    - drivers/*/*_sophgo_*.c
+    - scripts/west_commands/runners/cvi-fiptool.py
+    - soc/sophgo/
+  labels:
+    - "platform: SOPHGO"
+
+Intel Platforms (X86):
+  status: maintained
+  maintainers:
+    - edersondisouza
+  collaborators:
+    - najumon1980
+    - teburd
+    - dcpleung
+    - ceolin
+  files:
+    - boards/intel/adl/
+    - boards/intel/ehl/
+    - boards/intel/rpl/
+    - dts/x86/intel/
+    - soc/intel/atom/
+    - soc/intel/lakemont/
+    - soc/intel/*_lake/
+    - drivers/timer/Kconfig.x86
+    - drivers/timer/hpet.c
+    - drivers/timer/apic*
+  labels:
+    - "platform: X86"
+
+Intel Platforms (Xtensa):
+  status: maintained
+  maintainers:
+    - dcpleung
+  collaborators:
+    - andyross
+    - lyakh
+    - lgirdwood
+    - kv2019i
+    - ceolin
+    - tmleman
+    - softwarecki
+    - jxstelter
+    - marcinszkudlinski
+    - nashif
+  files:
+    - boards/intel/adsp/
+    - soc/intel/intel_adsp/
+    - dts/xtensa/intel/
+    - tests/boards/intel_adsp/
+    - samples/boards/intel/adsp/
+    - dts/bindings/*/intel,adsp*
+    - scripts/west_commands/runners/intel_adsp.py
+  labels:
+    - "platform: Intel ADSP"
+
+Intel Platforms (ISH):
+  status: maintained
+  maintainers:
+    - kwd-doodling
+  collaborators:
+    - teburd
+    - likongintel
+    - nashif
+  files:
+    - boards/intel/ish/
+    - soc/intel/intel_ish/
+    - dts/x86/intel/intel_ish*
+    - dts/bindings/*/intel,sedi*
+    - drivers/*/*sedi*
+  labels:
+    - "platform: Intel ISH"
+
+Intel Platforms (Agilex):
+  status: maintained
+  maintainers:
+    - gdengi
+  collaborators:
+    - nbalabak
+    - teikheng
+  files:
+    - boards/intel/socfpga/
+    - soc/intel/intel_socfpga/
+    - dts/arm64/intel/
+    - dts/bindings/*/intel,agilex*
+    - dts/arm/intel_socfpga_std/
+  labels:
+    - "platform: Intel SoC FPGA Agilex"
+
+NXP Platform Drivers:
+  status: maintained
+  maintainers:
+    - dleach02
+    - mmahadevan108
+  collaborators:
+    - decsny
+    - manuargue
+    - dbaluta
+    - Raymond0225
+  files-regex:
+    - ^drivers/.*nxp.*
+    - ^drivers/.*mcux.*
+  files:
+    - drivers/*/*imx*
+    - drivers/*/*lpc*.c
+    - drivers/*/*mcux*.c
+    - drivers/*/*.mcux
+    - drivers/*/*.nxp
+    - drivers/*/*nxp*
+    - drivers/*/*/*kinetis*
+    - drivers/misc/*/nxp*
+    - include/zephyr/dt-bindings/*/*nxp*
+    - include/zephyr/dt-bindings/*/*mcux*
+    - include/zephyr/dt-bindings/inputmux/
+    - include/zephyr/dt-bindings/rdc/
+    - include/zephyr/drivers/*/*nxp*
+    - include/zephyr/drivers/*/*nxp*/
+    - include/zephyr/drivers/*/*mcux*
+    - arch/arm/core/mpu/nxp_mpu.c
+    - dts/bindings/*/nxp*
+  files-exclude:
+    - drivers/wifi/
+    - drivers/bluetooth/
+    - drivers/usb/
+  files-regex-exclude:
+    - .*s32.*
+  labels:
+    - "platform: NXP Drivers"
+  description: NXP Drivers
+
+NXP Platform Wireless:
+  status: maintained
+  maintainers:
+    - dleach02
+  collaborators:
+    - MaochenWang1
+    - axelnxp
+    - George-Stefan
+  files:
+    - boards/nxp/*mcxw*/
+    - boards/nxp/*rw*/
+    - drivers/*/*mcxw*.c
+    - drivers/bluetooth/hci/*nxp*
+    - drivers/hdlc_rcp_if/*nxp*
+    - drivers/ieee802154/ieee802154_kw41z.c
+    - drivers/wifi/nxp/
+    - samples/bluetooth/**/*rw*
+    - samples/net/**/*mcxw*
+    - samples/net/**/*nxp*
+    - samples/net/**/*rw*
+    - soc/nxp/mcx/mcxw/
+    - soc/nxp/rw/
+  labels:
+    - "platform: NXP Drivers"
+
+NXP Platform MCUX USB:
+  status: maintained
+  maintainers:
+    - mmahadevan108
+    - MarkWangChinese
+  files:
+    - drivers/usb/*/*mcux*
+    - boards/nxp/usb_kw24d512/
+  labels:
+    - "platform: NXP Drivers"
+  description: NXP MCUX USB shim drivers
+
+NXP Platforms (MCU):
+  status: maintained
+  maintainers:
+    - dleach02
+    - mmahadevan108
+  collaborators:
+    - DerekSnell
+    - EmilioCBen
+    - decsny
+    - butok
+  files:
+    - boards/nxp/mimxrt*/
+    - boards/nxp/frdm*/
+    - boards/nxp/lpcxpress*/
+    - boards/nxp/twr_*/
+    - boards/nxp/*rw*/
+    - boards/nxp/hexiwear/
+    - boards/nxp/common/
+    - boards/nxp/*
+    - soc/nxp/common/
+    - soc/nxp/imxrt/
+    - soc/nxp/kinetis/
+    - soc/nxp/lpc/
+    - soc/nxp/rw/
+    - soc/nxp/mcx/
+    - dts/arm/nxp/
+    - samples/boards/nxp*/
+  files-exclude:
+    - dts/arm/nxp/nxp_imx*
+  files-regex-exclude:
+    - .*s32.*
+  labels:
+    - "platform: NXP"
+  description: NXP MCU Platforms supported by MCUXpresso suite
+
+NXP Platforms (S32):
+  status: maintained
+  maintainers:
+    - manuargue
+  collaborators:
+    - Dat-NguyenDuy
+    - congnguyenhuu
+  files:
+    - boards/nxp/*s32*/
+    - boards/common/*nxp_s32*
+    - soc/nxp/s32/
+    - drivers/*/*nxp_s32*
+    - drivers/misc/*nxp_s32*/
+    - dts/bindings/*/nxp,s32*
+    - dts/arm/nxp/*s32*
+    - samples/boards/nxp/s32/
+    - include/zephyr/dt-bindings/*/nxp-s32*
+    - include/zephyr/dt-bindings/*/nxp_s32*
+    - include/zephyr/drivers/*/*nxp_s32*
+  files-exclude:
+    - boards/nxp/ucans32k1sic/
+  labels:
+    - "platform: NXP S32"
+  description: NXP S32 platforms and S32-specific drivers
+
+NXP Platforms (MPU):
+  status: maintained
+  maintainers:
+    - JiafeiPan
+  collaborators:
+    - dleach02
+    - dbaluta
+    - iuliana-prodan
+    - yangbolu1991
+    - Zhiqiang-Hou
+  files:
+    - dts/arm64/nxp/
+    - dts/arm/nxp/nxp_imx*
+    - soc/nxp/imx/
+    - soc/nxp/layerscape/
+    - boards/nxp/ls1046ardb/
+  files-regex:
+    - boards/nxp/m?imx[^(rt)].*/
+  labels:
+    - "platform: NXP MPU"
+  description: NXP MPU platforms
+
+NXP Platforms (Xtensa):
+  status: maintained
+  maintainers:
+    - dbaluta
+  collaborators:
+    - iuliana-prodan
+  files:
+    - soc/nxp/imx/*/adsp/
+    - soc/nxp/imxrt/imxrt5xx/f1/
+  labels:
+    - "platform: NXP Xtensa"
+  description: NXP Xtensa platforms
+
+NXP Platforms (Robotics Products):
+  status: maintained
+  maintainers:
+    - bperseghetti
+    - PetervdPerk-NXP
+  collaborators:
+    - manuargue
+  files:
+    - boards/nxp/vmu*/
+    - boards/nxp/rddrone_fmuk66/
+    - boards/nxp/mr_canhubk3/
+    - boards/nxp/ucans32k1sic/
+  labels:
+    - "platform: NXP Robotics"
+  description: NXP Robotics Module Platform Products
+
+Microchip MEC Platforms:
+  status: maintained
+  maintainers:
+    - jvasanth1
+  collaborators:
+    - VenkatKotakonda
+    - albertofloyd
+  files:
+    - boards/microchip/mec*/
+    - dts/arm/microchip/
+    - soc/microchip/mec/
+    - drivers/*/*mchp*.c
+    - tests/boards/mec15xxevb_assy6853/
+    - tests/boards/mec172xevb_assy6906/
+    - dts/bindings/*/microchip,mec*
+    - dts/bindings/*/microchip,xec*
+  labels:
+    - "platform: Microchip MEC"
+
+Microchip RISC-V Platforms:
+  status: maintained
+  maintainers:
+    - fkokosinski
+    - kgugala
+    - tgorochowik
+  files:
+    - boards/microchip/m2gl025_miv/
+    - boards/microchip/mpfs_icicle/
+    - dts/riscv/microchip/
+    - soc/microchip/miv/
+  labels:
+    - "platform: Microchip RISC-V"
+
+Microchip SAM Platforms:
+  status: maintained
+  maintainers:
+    - nandojve
+  collaborators:
+    - attie-argentum
+    - pdgendt
+    - mnkp
+    - stephanosio
+  files:
+    - boards/atmel/
+    - dts/arm/atmel/
+    - soc/atmel/
+    - drivers/*/*sam*.c
+    - dts/bindings/*/atmel,*
+  labels:
+    - "platform: Microchip SAM"
+
+nRF Platforms:
+  status: maintained
+  maintainers:
+    - anangl
+    - masz-nordic
+  collaborators:
+    - jaz1-nordic
+    - kl-cruz
+    - magp-nordic
+    - nika-nordic
+  files:
+    - boards/nordic/
+    - drivers/*/*nrf*.c
+    - drivers/*/*nrf*/
+    - drivers/*/*nordic*/
+    - soc/nordic/
+    - samples/boards/nordic/
+    - dts/*/nordic/
+    - dts/bindings/*/nordic,*
+    - include/zephyr/drivers/*/*nrf*.h
+    - include/zephyr/drivers/*/*nrf*/
+    - include/zephyr/dt-bindings/*/nordic*.h
+    - include/zephyr/dt-bindings/*/nrf*.h
+    - tests/drivers/*/*nrf*/
+    - snippets/nordic*/
+    - tests/boards/nrf/
+  labels:
+    - "platform: nRF"
+
+Octavo Systems Platforms:
+  status: maintained
+  maintainers:
+    - fkokosinski
+    - tgorochowik
+  collaborators:
+    - kgugala
+  files:
+    - boards/oct/
+    - soc/oct/
+  labels:
+    - "platform: Octavo Systems"
+
+OpenTitan Platforms:
+  status: maintained
+  maintainers:
+    - snematbakhsh
+  files:
+    - boards/lowrisc/opentitan_earlgrey/
+    - drivers/*/*opentitan*
+    - dts/bindings/*/*opentitan*
+    - dts/riscv/lowrisc/*opentitan*
+    - soc/lowrisc/opentitan/
+  labels:
+    - "platform: OpenTitan"
+  description: >-
+    OpenTitan boards, SOCs, dts files and related drivers.
+
 Realtek EC Platforms:
   status: maintained
   maintainers:
