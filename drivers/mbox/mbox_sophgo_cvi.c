@@ -62,7 +62,9 @@ static int mbox_cvi_send(const struct device *dev, uint32_t channel, const struc
 
 	ARG_UNUSED(dev);
 
-	memcpy((unsigned long *)MBOX_BUFFER + channel, msg->data, msg->size);
+	if (msg)
+		memcpy((unsigned long *)MBOX_BUFFER + channel, msg->data, msg->size);
+
 	sys_write8(BIT(channel), MBOX_INT_CLEAR(MBOX_TX_CPU));
 	tmp_mbox_info = sys_read8(MBOX_INT_ENABLE(MBOX_TX_CPU));
 	tmp_mbox_info |= BIT(channel);
@@ -108,6 +110,11 @@ static int mbox_cvi_set_enabled(const struct device *dev, uint32_t channel, bool
 	ARG_UNUSED(channel);
 	ARG_UNUSED(enable);
 
+	if (enable)
+		irq_enable(DT_INST_IRQN(0));
+	else
+		irq_disable(DT_INST_IRQN(0));
+
 	return 0;
 }
 
@@ -116,7 +123,6 @@ static int mbox_cvi_init(const struct device *dev)
 	ARG_UNUSED(dev);
 
 	IRQ_CONNECT(DT_INST_IRQN(0), DT_INST_IRQ(0, priority), mbox_isr, DEVICE_DT_INST_GET(0), 0);
-	irq_enable(DT_INST_IRQN(0));
 
 	return 0;
 }
